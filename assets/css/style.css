@@ -36,7 +36,15 @@
 }
 
 /* ====== BASE ====== */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
 
+html {
+  scroll-behavior: smooth;
+}
 /* ====== Variables Dark Theme ======= */
 
 /* ====== Button Dark/Light ====== */
@@ -46,17 +54,146 @@
 /* ====== Generate PDF button ====== */
 
 /* ====== Classes modified to reduce size and print on A4 sheet ====== */
+body {
+  margin: 0 0 var(--header-height) 0;
+  padding: 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
 
+h1,
+h2,
+h3,
+ul,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
 /* ====== Class CSS ====== */
+.section {
+  padding: 1.5rem 0;
+}
+
+.section-title {
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  font-weight: var(--smaller-font-size);
+  text-transform: uppercase;
+  letter-spacing: 0.35rem;
+  text-align: center;
+  margin-bottom: var(--mb-3);
+}
 
 /* ====== Layout ====== */
+.bd-container {
+  max-width: 968px;
+  width: calc(100% - 3rem);
+  margin-left: var(--mb-3);
+  margin-right: var(--mb-3);
+}
 
+.bd-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.l-header {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
 /* ====== Nav ====== */
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media screen and (max-width: 968px) {
+  .nav__menu {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    background-color: var(--body-color);
+    box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    z-index: var(--z-fixed);
+    transition: 0.3s;
+  }
+}
+
+.nav__logo,
+.nav__toggle {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+.nav__toggle {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.nav__item {
+  text-align: center;
+}
+
+.nav__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  font-weight: var(--font-medium);
+}
+
+.nav__link:hover {
+  color: var(--title-color);
+}
+
+.nav__icon {
+  font-size: 1.2rem;
+  margin-bottom: var(--mb-1);
+}
 
 /* Show Menu */
+.show-menu {
+  bottom: var(--header-height);
+}
 
 /* Active Menu Link */
-
+.active-link {
+  color: var(--title-color);
+}
 /* ====== HOME ====== */
 
 /* ====== SOCIAL ====== */
@@ -76,4 +213,4 @@
 /* ================ MEDIA QUERIES =============== */
 /* For small devices, menu two columns */
 
-/* Classes modifies for large screen size */
+/* Classes modifies for large screen size */ ;
